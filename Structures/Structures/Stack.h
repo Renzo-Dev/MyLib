@@ -22,6 +22,16 @@ public:
 	{
 	}
 
+	Stack(const Stack& other) : head(nullptr), size(0)
+	{
+		Node* temp = other.head;
+		while (temp)
+		{
+			push(temp->data);
+			temp = temp->next;
+		}
+	}
+
 	void push(T value)
 	{
 		Node* newNode = new Node(value);
